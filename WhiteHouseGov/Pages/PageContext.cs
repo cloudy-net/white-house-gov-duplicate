@@ -15,7 +15,7 @@ namespace ScholarlySummaries.Pages
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<StartPage>();
+            modelBuilder.Entity<StartPage>().HasDiscriminator<string>("4c796987-e198-48fe-9175-4ada770cd298");
         }
     }
 }
