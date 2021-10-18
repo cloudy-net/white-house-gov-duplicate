@@ -46,7 +46,7 @@ namespace WhiteHouseGov
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCloudyAdminStaticFiles();
+            app.UseCloudyAdminStaticFilesFromPath(@"..\..\Cloudy.CMS\Cloudy.CMS.UI\wwwroot");
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
