@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ScholarlySummaries.Migrations
+namespace WhiteHouseGov.Migrations
 {
     public partial class InitialCreate : Migration
     {

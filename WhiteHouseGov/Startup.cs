@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ScholarlySummaries.Models;
+using WhiteHouseGov.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,8 +54,7 @@ namespace WhiteHouseGov
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapCloudyAdminRoutes();
-                endpoints.MapGet("/", async c => c.Response.Redirect("/Admin"));
-                endpoints.MapControllerRoute(null, "/{route:contentroute}", new { controller = "Page", action = "Index" });
+                endpoints.MapControllerRoute(null, "/{**route:contentroute}", new { controller = "Page", action = "Index" });
             });
         }
     }

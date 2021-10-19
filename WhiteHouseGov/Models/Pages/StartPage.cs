@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ScholarlySummaries.Models.Pages
+namespace WhiteHouseGov.Models.Pages
 {
     [ContentType("4c796987-e198-48fe-9175-4ada770cd298")]
     public class StartPage : Page

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>ScholarlySummaries</RootNamespace>
+    <RootNamespace>WhiteHouseGov</RootNamespace>
     <UserSecretsId>a0295a6b-f325-42ad-bd84-e2655953b03f</UserSecretsId>
   </PropertyGroup>
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ScholarlySummaries.Models
+namespace WhiteHouseGov.Models
 {
     public abstract class Page : IRoutable, INameable
     {

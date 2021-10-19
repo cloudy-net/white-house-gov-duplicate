@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ScholarlySummaries.Models.Pages;
+using WhiteHouseGov.Models.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ScholarlySummaries.Models
+namespace WhiteHouseGov.Models
 {
     public class PageContext : DbContext
     {

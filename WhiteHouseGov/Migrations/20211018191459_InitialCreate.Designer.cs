@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ScholarlySummaries.Models;
+using WhiteHouseGov.Models;
 
-namespace ScholarlySummaries.Migrations
+namespace WhiteHouseGov.Migrations
 {
     [DbContext(typeof(PageContext))]
     [Migration("20211018191459_InitialCreate")]
@@ -20,7 +20,7 @@ namespace ScholarlySummaries.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ScholarlySummaries.Pages.Page", b =>
+            modelBuilder.Entity("WhiteHouseGov.Pages.Page", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,9 +44,9 @@ namespace ScholarlySummaries.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Page");
                 });
 
-            modelBuilder.Entity("ScholarlySummaries.Pages.StartPage", b =>
+            modelBuilder.Entity("WhiteHouseGov.Pages.StartPage", b =>
                 {
-                    b.HasBaseType("ScholarlySummaries.Pages.Page");
+                    b.HasBaseType("WhiteHouseGov.Pages.Page");
 
                     b.Property<string>("Blocks")
                         .HasColumnType("nvarchar(max)");
