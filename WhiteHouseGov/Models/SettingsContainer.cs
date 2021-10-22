@@ -4,7 +4,6 @@ namespace WhiteHouseGov.Models
 {
     public abstract class SettingsContainer
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
     }
 }

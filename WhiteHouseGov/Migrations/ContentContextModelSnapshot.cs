@@ -45,7 +45,9 @@ namespace WhiteHouseGov.Migrations
             modelBuilder.Entity("WhiteHouseGov.Models.SettingsContainer", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Discriminator")
                         .IsRequired()

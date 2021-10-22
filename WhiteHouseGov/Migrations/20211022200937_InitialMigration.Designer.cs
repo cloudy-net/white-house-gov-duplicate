@@ -9,7 +9,7 @@ using WhiteHouseGov.Models;
 namespace WhiteHouseGov.Migrations
 {
     [DbContext(typeof(ContentContext))]
-    [Migration("20211022192511_InitialMigration")]
+    [Migration("20211022200937_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,9 @@ namespace WhiteHouseGov.Migrations
             modelBuilder.Entity("WhiteHouseGov.Models.SettingsContainer", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Discriminator")
                         .IsRequired()

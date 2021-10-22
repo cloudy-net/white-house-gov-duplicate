@@ -15,6 +15,8 @@
     <Compile Remove="Migrations\20211022184643_RemoveAutoIncrementOnSettingsContainers.Designer.cs" />
     <Compile Remove="Migrations\20211022192306_InitialMigration.cs" />
     <Compile Remove="Migrations\20211022192306_InitialMigration.Designer.cs" />
+    <Compile Remove="Migrations\20211022192511_InitialMigration.cs" />
+    <Compile Remove="Migrations\20211022192511_InitialMigration.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

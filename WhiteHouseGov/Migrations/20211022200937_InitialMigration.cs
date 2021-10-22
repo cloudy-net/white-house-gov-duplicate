@@ -27,7 +27,8 @@ namespace WhiteHouseGov.Migrations
                 name: "Settings",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Discriminator = table.Column<string>(nullable: false),
                     MainLinks = table.Column<string>(nullable: true),
                     SecondaryLinks = table.Column<string>(nullable: true),
