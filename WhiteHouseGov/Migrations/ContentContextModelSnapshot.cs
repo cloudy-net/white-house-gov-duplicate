@@ -2,17 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WhiteHouseGov.Models;
 
 namespace WhiteHouseGov.Migrations
 {
     [DbContext(typeof(ContentContext))]
-    [Migration("20211018191459_InitialCreate")]
-    partial class InitialCreate
+    partial class ContentContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,7 +18,7 @@ namespace WhiteHouseGov.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WhiteHouseGov.Pages.Page", b =>
+            modelBuilder.Entity("WhiteHouseGov.Models.Page", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,9 +42,25 @@ namespace WhiteHouseGov.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Page");
                 });
 
-            modelBuilder.Entity("WhiteHouseGov.Pages.StartPage", b =>
+            modelBuilder.Entity("WhiteHouseGov.Models.SettingsContainer", b =>
                 {
-                    b.HasBaseType("WhiteHouseGov.Pages.Page");
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("SettingsContainer");
+                });
+
+            modelBuilder.Entity("WhiteHouseGov.Models.Pages.StartPage", b =>
+                {
+                    b.HasBaseType("WhiteHouseGov.Models.Page");
 
                     b.Property<string>("Blocks")
                         .HasColumnType("nvarchar(max)");
@@ -55,6 +69,29 @@ namespace WhiteHouseGov.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("StartPage");
+                });
+
+            modelBuilder.Entity("WhiteHouseGov.Models.Settings.FooterSettings", b =>
+                {
+                    b.HasBaseType("WhiteHouseGov.Models.SettingsContainer");
+
+                    b.Property<string>("MainLinks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SecondaryLinks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("FooterSettings");
+                });
+
+            modelBuilder.Entity("WhiteHouseGov.Models.Settings.HeaderSettings", b =>
+                {
+                    b.HasBaseType("WhiteHouseGov.Models.SettingsContainer");
+
+                    b.Property<string>("PageLinks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("HeaderSettings");
                 });
 #pragma warning restore 612, 618
         }

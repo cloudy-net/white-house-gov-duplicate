@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20211018191459_InitialCreate.cs" />
+    <Compile Remove="Migrations\20211018191459_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20211021175332_AddSettingsContainers.cs" />
+    <Compile Remove="Migrations\20211021175332_AddSettingsContainers.Designer.cs" />
+    <Compile Remove="Migrations\20211022184643_RemoveAutoIncrementOnSettingsContainers.cs" />
+    <Compile Remove="Migrations\20211022184643_RemoveAutoIncrementOnSettingsContainers.Designer.cs" />
+    <Compile Remove="Migrations\20211022192306_InitialMigration.cs" />
+    <Compile Remove="Migrations\20211022192306_InitialMigration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!--<PackageReference Include="Cloudy.CMS" Version="1.49.0" />
     <PackageReference Include="Cloudy.CMS.UI" Version="1.49.0" />-->
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.16" />
@@ -20,6 +31,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Cloudy.CMS\Cloudy.CMS.UI\Cloudy.CMS.UI.csproj" />
     <ProjectReference Include="..\..\Cloudy.CMS\Cloudy.CMS\Cloudy.CMS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
