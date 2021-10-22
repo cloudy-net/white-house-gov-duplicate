@@ -8,7 +8,7 @@ using WhiteHouseGov.Models;
 
 namespace WhiteHouseGov.Migrations
 {
-    [DbContext(typeof(PageContext))]
+    [DbContext(typeof(ContentContext))]
     [Migration("20211018191459_InitialCreate")]
     partial class InitialCreate
     {

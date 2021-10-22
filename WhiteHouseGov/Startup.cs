@@ -28,9 +28,9 @@ namespace WhiteHouseGov
             services.AddMvc();
             services.AddCloudy(cloudy => cloudy
                 .AddAdmin(admin => admin.Unprotect())
-                .AddContext<PageContext>()
+                .AddContext<ContentContext>()
             );
-            services.AddDbContext<PageContext>(options => options
+            services.AddDbContext<ContentContext>(options => options
                 .UseSqlServer(
                     Configuration.GetConnectionString("sqlserver") ?? throw new Exception("No sqlserver connection string found in appsettings/env"),
                     options => options.EnableRetryOnFailure()
@@ -54,7 +54,7 @@ namespace WhiteHouseGov
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapCloudyAdminRoutes();
-                endpoints.MapControllerRoute(null, "/{**route:contentroute}", new { controller = "Page", action = "Index" });
+                endpoints.MapControllerRoute(null, "/{route:contentroute}", new { controller = "Page", action = "Index" });
             });
         }
     }
