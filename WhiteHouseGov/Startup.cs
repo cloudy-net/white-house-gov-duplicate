@@ -28,9 +28,9 @@ namespace WhiteHouseGov
             services.AddMvc();
             services.AddCloudy(cloudy => cloudy
                 .AddAdmin(admin => admin.Unprotect())
-                .AddContext<ContentContext>()
+                .AddContext<ModelContext>()
             );
-            services.AddDbContext<ContentContext>(options => options
+            services.AddDbContext<ModelContext>(options => options
                 .UseSqlServer(
                     Configuration.GetConnectionString("sqlserver") ?? throw new Exception("No sqlserver connection string found in appsettings/env"),
                     options => options.EnableRetryOnFailure()

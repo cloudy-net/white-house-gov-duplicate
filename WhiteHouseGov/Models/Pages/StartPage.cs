@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WhiteHouseGov.Models.Blocks;
 
 namespace WhiteHouseGov.Models.Pages
 {
@@ -12,6 +13,6 @@ namespace WhiteHouseGov.Models.Pages
     public class StartPage : Page
     {
         public string HeroHeading { get; set; }
-        public string Blocks { get; set; }
+        public IEnumerable<IStartPageBlock> Blocks { get; set; }
     }
 }

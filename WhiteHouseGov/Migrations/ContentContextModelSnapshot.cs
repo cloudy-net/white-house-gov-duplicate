@@ -7,7 +7,7 @@ using WhiteHouseGov.Models;
 
 namespace WhiteHouseGov.Migrations
 {
-    [DbContext(typeof(ContentContext))]
+    [DbContext(typeof(ModelContext))]
     partial class ContentContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
