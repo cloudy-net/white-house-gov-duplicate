@@ -54,6 +54,7 @@ namespace WhiteHouseGov
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapCloudyAdminRoutes();
+                endpoints.MapControllerRoute(null, "/", new { controller = "Page", action = "StartPage" });
                 endpoints.MapControllerRoute(null, "/{route:contentroute}", new { controller = "Page", action = "Index" });
             });
         }
