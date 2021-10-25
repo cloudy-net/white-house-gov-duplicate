@@ -14,3 +14,4 @@ obj
 Logs
 .vscode
 Website.AspNetCore/data
+/WhiteHouseGov/wwwroot/dist/*
