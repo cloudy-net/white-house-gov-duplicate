@@ -10,7 +10,6 @@ const sassPlugin = {
             const result = sass.renderSync({
                 file: filePath,
             });
-            console.log(filePath)
             return {
                 loader: 'css',
                 contents: result.css.toString(),
@@ -34,5 +33,4 @@ esbuild.build(
         sourcemap: true,
         plugins: [sassPlugin],
         minify: true,
-        watch: true,
     }).catch((e) => console.error(e.message));

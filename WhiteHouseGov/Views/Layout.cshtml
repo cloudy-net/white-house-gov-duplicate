@@ -3,9 +3,11 @@
     <link rel="stylesheet" href="/dist/styles/index.css" />
 </head>
 <body>
-    header here pls
-    @RenderBody()
-    footer here pls
+    @Html.Partial("_Header")
+    <div class="main">
+        @RenderBody()
+    </div>
+    @Html.Partial("_Footer")
     <script type="text/javascript" src="/dist/scripts/index.js"></script>
 </body>
 </html>
