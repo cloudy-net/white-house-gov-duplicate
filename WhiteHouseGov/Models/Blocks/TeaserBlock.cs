@@ -1,4 +1,5 @@
-﻿using Cloudy.CMS.UI.FormSupport;
+﻿using Cloudy.CMS.ContentTypeSupport;
+using Cloudy.CMS.UI.FormSupport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WhiteHouseGov.Models.Blocks
 {
-    [Form("0730530d-ae62-4212-bbc2-cd649ba7571a")]
+    [ContentType("0730530d-ae62-4212-bbc2-cd649ba7571a")]
     public class TeaserBlock : IStartPageBlock
     {
         public string Heading { get; set; }

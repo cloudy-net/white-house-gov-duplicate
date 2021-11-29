@@ -19,7 +19,7 @@ namespace WhiteHouseGov.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<StartPage>().Property(s => s.Blocks).HasConversion(new PolymorphicValueConverter<IEnumerable<IStartPageBlock>>());
+            modelBuilder.Entity<StartPage>().Property(s => s.Blocks).HasConversion(new JsonValueConverter<IEnumerable<IStartPageBlock>>());
             modelBuilder.Entity<HeaderSettings>().Property(s => s.PageLinks).HasConversion(new JsonValueConverter<IEnumerable<string>>());
             modelBuilder.Entity<FooterSettings>().Property(s => s.MainLinks).HasConversion(new JsonValueConverter<IEnumerable<string>>());
             modelBuilder.Entity<FooterSettings>().Property(s => s.SecondaryLinks).HasConversion(new JsonValueConverter<IEnumerable<string>>());
