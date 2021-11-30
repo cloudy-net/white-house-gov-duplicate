@@ -2,6 +2,7 @@
 using Cloudy.CMS.UI.FormSupport;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,5 +12,7 @@ namespace WhiteHouseGov.Models.Blocks
     public class TeaserBlock : IStartPageBlock
     {
         public string Heading { get; set; }
+        [UIHint("html")]
+        public string Body { get; set; }
     }
 }

@@ -11,5 +11,6 @@ namespace WhiteHouseGov.Models.Blocks
     public class HeroBlock : IStartPageBlock
     {
         public string Heading { get; set; }
+        public string Link { get; set; }
     }
 }
